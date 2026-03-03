@@ -5,7 +5,6 @@ def dijkstra(graph, n, source):
     dist[source] = 0
     
     for _ in range(n):
-        # Find minimum distance vertex
         min_dist = float('inf')
         u = -1
         
@@ -16,7 +15,6 @@ def dijkstra(graph, n, source):
         
         visited[u] = True
         
-        # Update adjacent vertices
         for v in range(n):
             if graph[u][v] > 0 and not visited[v]:
                 if dist[v] > dist[u] + graph[u][v]:
@@ -25,7 +23,6 @@ def dijkstra(graph, n, source):
     return dist
 
 
-# Example Graph (Adjacency Matrix)
 graph = [
     [0,4,1,0,0],
     [4,0,2,5,0],
